@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    list-style: none;
+}
+
+body {
+    padding: 2rem;
+    min-height: 100vh;
+    background: -webkit-linear-gradient(
+        100deg,
+        rgb(168, 230, 207) 0%,
+        rgb(255, 170, 165) 100%
+    );
+    background: -moz-linear-gradient(
+        100deg,
+        rgb(168, 230, 207) 0%,
+        rgb(255, 170, 165) 100%
+    );
+    background: -o-linear-gradient(
+        100deg,
+        rgb(168, 230, 207) 0%,
+        rgb(255, 170, 165) 100%
+    );
+    background: linear-gradient(
+        100deg,
+        rgb(168, 230, 207) 0%,
+        rgb(255, 170, 165) 100%
+    );
+    background-size: 300%;
+    animation: gradient 5s infinite alternate;
+}
+
+.container {
+    width: 80%;
+    margin: 6rem auto;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    padding: 3rem;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2rem;
+
+    animation: shadow 2s alternate infinite;
+}
+
+input {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #fff;
+    line-height: 0.2rem;
+    padding: 0.2rem;
+}
+
+button {
+    background: linear-gradient(to right, rgb(67, 66, 66), rgb(34, 163, 159));
+    background-size: 300%;
+    background-position: left;
+    border: none;
+    border-radius: 2rem;
+    font-weight: bolder;
+    padding: 0.5rem 2rem;
+    margin: 0.5rem 0 0 1rem;
+    cursor: pointer;
+    color: #fff;
+
+    transition: background-position 0.5s ease;
+}
+
+button:hover {
+    background-position: right;
+}
+
+input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+}
+
+.modal {
+    height: 60%;
+    width: 80%;
+    position: absolute;
+    background-color: transparent;
+    border: 2px solid red;
+    z-index: 99999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.error {
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
+}
+
+@keyframes shadow {
+    0% {
+        box-shadow: 5px 5px 20px rgba(175, 202, 202, 1);
+    }
+    100% {
+        box-shadow: 5px 5px 20px rgba(33, 33, 33, 1);
+    }
+}
